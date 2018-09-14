@@ -62,7 +62,7 @@ public class AddEditFragment extends Fragment implements LoaderManager.LoaderCal
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
-        listner = (AddEditFragmentListner) context
+        listner = (AddEditFragmentListner) context;
     }
 
     /* Usunięcie obiektu addEditFragmentListner przy odłączeniu fragmentu od głównej aktywności */
@@ -89,7 +89,6 @@ public class AddEditFragment extends Fragment implements LoaderManager.LoaderCal
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-                //TODO
                 updateSaveButtonFAB();
 
             }
@@ -119,6 +118,9 @@ public class AddEditFragment extends Fragment implements LoaderManager.LoaderCal
             }
 
         });
+
+        updateSaveButtonFAB();
+
         /* Kod używany do wyświetlania obiektów snackbar */
         coordinatorLayout = (CoordinatorLayout) getActivity().findViewById(R.id.coordinatorLayout);
         Bundle arguments = getArguments();
